@@ -27,13 +27,8 @@ namespace wpfCalculator
         {
             InitializeComponent();
             InputString = new StringBuilder();
-            output_1.Visibility = Visibility.Hidden;
-            output_2.Visibility = Visibility.Hidden;
-            output_3.Visibility = Visibility.Hidden;
-            output_4.Visibility = Visibility.Hidden;
-            output_5.Visibility = Visibility.Hidden;
-            output_6.Visibility = Visibility.Hidden;
             HideComboBoxes();
+            Hide6TextBoxes();
         }
 
         private void HideComboBoxes()
@@ -43,6 +38,16 @@ namespace wpfCalculator
             Units_mass.Visibility = Visibility.Hidden;
             Units_number.Visibility = Visibility.Hidden;
             Units_time.Visibility = Visibility.Hidden;
+        }
+
+        private void Hide6TextBoxes()
+        {
+            output_1.Visibility = Visibility.Hidden;
+            output_2.Visibility = Visibility.Hidden;
+            output_3.Visibility = Visibility.Hidden;
+            output_4.Visibility = Visibility.Hidden;
+            output_5.Visibility = Visibility.Hidden;
+            output_6.Visibility = Visibility.Hidden;
         }
 
         private bool InsultUsers()
@@ -244,25 +249,9 @@ namespace wpfCalculator
             }
             else if (Conversion_ask.SelectedValue.ToString() == "uo_number")
             {
-                //var tagVal = Units_number.SelectedValue.ToString();
-
-                var inputUnit = Units_number.SelectedValue;
-                //Expression regular = new Expression($"{MathExp}");
-                //bool success_1 = decimal.TryParse(MathExp, out decimal my_dec);
-                //int my_int;
-                //if (success_1)
-                //{
-                //    my_int = Convert.ToInt32(MathExp);
-
-                //}
-                //var result = regular.calculate().ToString();
                 bool success = int.TryParse(MathExp, out int my_regular);
-                //bool success_3 = int.TryParse(result, out int my_regular);
                 if (success)
                 {
-                    //int fromBase = 10;
-                    //int toBase = 2;
-                    //String result = Convert.ToString(Convert.ToInt32(my_regular, fromBase), toBase);
                     output_1.Text = $"Integer: {my_regular}";
                     output_1.Visibility = Visibility.Visible;
 
@@ -276,25 +265,12 @@ namespace wpfCalculator
                     output_4.Text = $"Hexadecimal: {my_hex}";
                     output_4.Visibility = Visibility.Visible;
                     ClearAll();
-
-
-
                 }
                 else
                 {
                     output_1.Text = $"Not a integer or other errors";
                     output_1.Visibility = Visibility.Visible;
                 }
-
-                //Expression binary = new Expression($"base({MathExp}, 2)");
-                //output_2.Text = $"Binary: {binary.calculate()}";
-                //output_2.Visibility = Visibility.Visible;
-                //Expression octal = new Expression($"({MathExp}*[{inputUnit}])/[h]");
-                //output_3.Text = $"Octal: {octal.calculate()}";
-                //output_3.Visibility = Visibility.Visible;
-                //Expression Hexadecimal = new Expression($"({MathExp}*[{inputUnit}])/[GB]");
-                //output_4.Text = $"Hexadecimal: {Hexadecimal.calculate()}";
-                //output_4.Visibility = Visibility.Visible;
 
             }
 
@@ -319,6 +295,8 @@ namespace wpfCalculator
 
         private void Conversion_ask_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            ConversionWindow winCnversion = new ConversionWindow();
+
             if (Conversion_ask.SelectedValue != null)
             {
                 switch (Conversion_ask.SelectedValue.ToString())
@@ -329,6 +307,7 @@ namespace wpfCalculator
                         Units_mass.Visibility = Visibility.Hidden;
                         Units_number.Visibility = Visibility.Hidden;
                         Units_time.Visibility = Visibility.Hidden;
+                        winCnversion.Show();
                         break;
                     case "uo_length":
                         Units_length.Visibility = Visibility.Visible;
@@ -336,6 +315,7 @@ namespace wpfCalculator
                         Units_mass.Visibility = Visibility.Hidden;
                         Units_number.Visibility = Visibility.Hidden;
                         Units_time.Visibility = Visibility.Hidden;
+                        winCnversion.Show();
                         break;
                     case "uo_mass":
                         Units_mass.Visibility = Visibility.Visible;
@@ -343,12 +323,14 @@ namespace wpfCalculator
                         Units_length.Visibility = Visibility.Hidden;
                         Units_number.Visibility = Visibility.Hidden;
                         Units_time.Visibility = Visibility.Hidden;
+                        winCnversion.Show();
                         break;
                     case "uo_number":
                         Units_info.Visibility = Visibility.Hidden;
                         Units_length.Visibility = Visibility.Hidden;
                         Units_mass.Visibility = Visibility.Hidden;
                         Units_time.Visibility = Visibility.Hidden;
+                        winCnversion.Show();
                         break;
                     case "uo_time":
                         Units_time.Visibility = Visibility.Visible;
@@ -356,9 +338,11 @@ namespace wpfCalculator
                         Units_length.Visibility = Visibility.Hidden;
                         Units_mass.Visibility = Visibility.Hidden;
                         Units_number.Visibility = Visibility.Hidden;
+                        winCnversion.Show();
                         break;
                     case "which":
                         HideComboBoxes();
+                        Hide6TextBoxes();
                         break;
                 }
             }

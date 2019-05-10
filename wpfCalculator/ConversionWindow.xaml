@@ -8,37 +8,37 @@
         Title="ConversionWindow" Height="422.182" Width="446.545">
     <Grid HorizontalAlignment="Left" Width="484">
         <Grid HorizontalAlignment="Left" Height="100" Margin="312,194,0,0" VerticalAlignment="Top" Width="100"/>
-        <TextBox Height="38" TextWrapping="Wrap" VerticalAlignment="Top" Margin="11,10,0,0" HorizontalAlignment="Left" Width="401" FontSize="20" Background="Black" BorderThickness="2" x:Name="output_1" Text="">
+        <TextBox Height="38" TextWrapping="Wrap" VerticalAlignment="Top" Margin="11,10,0,0" HorizontalAlignment="Left" Width="401" FontSize="20" Background="Black" BorderThickness="2" x:Name="output_1b" Text="">
             <TextBox.Foreground>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}" />
             </TextBox.Foreground>
 
         </TextBox>
-        <TextBox Height="38" TextWrapping="Wrap" VerticalAlignment="Top" Margin="11,71,0,0" HorizontalAlignment="Left" Width="401" FontSize="20" Background="Black" BorderThickness="2" x:Name="output_2" Text="">
+        <TextBox Height="38" TextWrapping="Wrap" VerticalAlignment="Top" Margin="11,71,0,0" HorizontalAlignment="Left" Width="401" FontSize="20" Background="Black" BorderThickness="2" x:Name="output_2b" Text="">
             <TextBox.Foreground>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}" />
             </TextBox.Foreground>
 
         </TextBox>
-        <TextBox Height="38" TextWrapping="Wrap" VerticalAlignment="Top" Margin="9,131,0,0" HorizontalAlignment="Left" Width="403" FontSize="20" Background="Black" BorderThickness="2" x:Name="output_3" Text="">
+        <TextBox Height="38" TextWrapping="Wrap" VerticalAlignment="Top" Margin="9,131,0,0" HorizontalAlignment="Left" Width="403" FontSize="20" Background="Black" BorderThickness="2" x:Name="output_3b" Text="">
             <TextBox.Foreground>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}" />
             </TextBox.Foreground>
 
         </TextBox>
-        <TextBox Height="38" TextWrapping="Wrap" VerticalAlignment="Top" Margin="9,194,0,0" HorizontalAlignment="Left" Width="403" FontSize="20" Background="Black" BorderThickness="2" x:Name="output_4" Text="">
+        <TextBox Height="38" TextWrapping="Wrap" VerticalAlignment="Top" Margin="9,194,0,0" HorizontalAlignment="Left" Width="403" FontSize="20" Background="Black" BorderThickness="2" x:Name="output_4b" Text="">
             <TextBox.Foreground>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}" />
             </TextBox.Foreground>
 
         </TextBox>
-        <TextBox Height="38" TextWrapping="Wrap" VerticalAlignment="Top" Margin="7,256,0,0" HorizontalAlignment="Left" Width="405" FontSize="20" Background="Black" BorderThickness="2" x:Name="output_5" Text="">
+        <TextBox Height="38" TextWrapping="Wrap" VerticalAlignment="Top" Margin="7,256,0,0" HorizontalAlignment="Left" Width="405" FontSize="20" Background="Black" BorderThickness="2" x:Name="output_5b" Text="">
             <TextBox.Foreground>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}" />
             </TextBox.Foreground>
 
         </TextBox>
-        <TextBox Height="38" TextWrapping="Wrap" VerticalAlignment="Top" Margin="12,327,0,0" HorizontalAlignment="Left" Width="400" FontSize="20" Background="Black" BorderThickness="2" x:Name="output_6" Text="">
+        <TextBox Height="38" TextWrapping="Wrap" VerticalAlignment="Top" Margin="12,327,0,0" HorizontalAlignment="Left" Width="400" FontSize="20" Background="Black" BorderThickness="2" x:Name="output_6b" Text="">
             <TextBox.Foreground>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}" />
             </TextBox.Foreground>
