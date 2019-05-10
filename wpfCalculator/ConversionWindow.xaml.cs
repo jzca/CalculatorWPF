@@ -22,6 +22,7 @@ namespace wpfCalculator
         public ConversionWindow()
         {
             InitializeComponent();
+            HideTextBoxes();
         }
 
         public void HideTextBoxes()
@@ -34,7 +35,7 @@ namespace wpfCalculator
             output_6b.Visibility = Visibility.Hidden;
         }
 
-        public void FeedTxt1(string msg)
+        internal void FeedTxt1(string msg)
         {
             output_1b.Text = msg;
         }
