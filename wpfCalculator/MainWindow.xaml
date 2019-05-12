@@ -324,7 +324,7 @@
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </ComboBox.Background>
-            <ComboBoxItem IsSelected="True" Content="Which length"/>
+            <ComboBoxItem IsSelected="True" Tag="question" Content="Which length"/>
             <ComboBoxItem Tag="mm" Content="millimetres"/>
             <ComboBoxItem Tag="cm" Content="centimeters"/>
             <ComboBoxItem Tag="m" Content="meters"/>
@@ -368,7 +368,7 @@
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </ComboBox.Background>
-            <ComboBoxItem IsSelected="True" Content="Which mass"/>
+            <ComboBoxItem IsSelected="True" Tag="question" Content="Which mass"/>
             <ComboBoxItem Tag="mg" Content="milligrams"/>
             <ComboBoxItem Tag="gr" Content="grams"/>
             <ComboBoxItem Tag="kg" Content="kilograms"/>
@@ -382,7 +382,7 @@
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </ComboBox.Background>
-            <ComboBoxItem IsSelected="True" Content="Which infomation"/>
+            <ComboBoxItem IsSelected="True" Tag="question" Content="Which infomation"/>
             <ComboBoxItem Tag="B" Content="bytes"/>
             <ComboBoxItem Tag="kB" Content="kilobytes"/>
             <ComboBoxItem Tag="MB" Content="megabytes"/>
@@ -396,7 +396,7 @@
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </ComboBox.Background>
-            <ComboBoxItem IsSelected="True" Content="Which time"/>
+            <ComboBoxItem IsSelected="True" Tag="question" Content="Which time"/>
             <ComboBoxItem Tag="s" Content="seconds"/>
             <ComboBoxItem Tag="min" Content="minutes"/>
             <ComboBoxItem Tag="h" Content="hours"/>

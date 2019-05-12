@@ -33,7 +33,7 @@ namespace wpfCalculator
 
         private void ShowWin2()
         {
-            WinCnversion = new ConversionWindow();         
+            WinCnversion = new ConversionWindow();
             WinCnversion.Show();
         }
 
@@ -54,7 +54,7 @@ namespace wpfCalculator
                 var occured = MathExp[0].ToString();
                 if (occured == "#" || occured == "/"
                     || occured == "*" || occured == "^"
-                    || occured =="!")
+                    || occured == "!")
                 {
                     yesHappened = true;
                 }
@@ -169,104 +169,147 @@ namespace wpfCalculator
 
         private void Conversion_click(object sender, RoutedEventArgs e)
         {
-            if (Conversion_ask.SelectedValue.ToString() == "uo_length")
+            if (MathExp.Any())
             {
-                var inputUnit = Units_length.SelectedValue;
-                Expression mm = new Expression($"({MathExp}*[{inputUnit}])/[mm]");
-                WinCnversion.FeedTxt1($"Millimetre: {mm.calculate()}");
-                WinCnversion.ShowTxt1();
-                Expression cm = new Expression($"({MathExp}*[{inputUnit}])/[cm]");
-                WinCnversion.FeedTxt2($"Centimeter: {cm.calculate()}");
-                WinCnversion.ShowTxt2();
-                Expression m = new Expression($"({MathExp}*[{inputUnit}])/[m]");
-                WinCnversion.FeedTxt3($"Meter: {m.calculate()}");
-                WinCnversion.ShowTxt3();
-                Expression km = new Expression($"({MathExp}*[{inputUnit}]) / [km]");
-                WinCnversion.FeedTxt4($"Kilometer: {km.calculate()}");
-                WinCnversion.ShowTxt4();
-                Expression inch = new Expression($"({MathExp}*[{inputUnit}])/[inch]");
-                WinCnversion.FeedTxt5($"Inch: {inch.calculate()}");
-                WinCnversion.ShowTxt5();
-                Expression ft = new Expression($"({MathExp}*[{inputUnit}])/[ft]");
-                WinCnversion.FeedTxt6($"Foot: {ft.calculate()}");
-                WinCnversion.ShowTxt6();
-            }
-            else if (Conversion_ask.SelectedValue.ToString() == "uo_mass")
-            {
-                var inputUnit = Units_mass.SelectedValue;
-                Expression mg = new Expression($"({MathExp}*[{inputUnit}])/[mg]");
-                WinCnversion.output_1b.Text = $"Milligram: {mg.calculate()}";
-                WinCnversion.output_1b.Visibility = Visibility.Visible;
-                Expression gr = new Expression($"({MathExp}*[{inputUnit}])/[gr]");
-                WinCnversion.output_2b.Text = $"Gram: {gr.calculate()}";
-                WinCnversion.output_2b.Visibility = Visibility.Visible;
-                Expression kg = new Expression($"({MathExp}*[{inputUnit}])/[kg]");
-                WinCnversion.output_3b.Text = $"Kilogram: {kg.calculate()}";
-                WinCnversion.output_3b.Visibility = Visibility.Visible;
-                Expression oz = new Expression($"({MathExp}*[{inputUnit}])/[oz]");
-                WinCnversion.output_4b.Text = $"Ounce: {oz.calculate()}";
-                WinCnversion.output_4b.Visibility = Visibility.Visible;
-                Expression lb = new Expression($"({MathExp}*[{inputUnit}])/[lb]");
-                WinCnversion.output_5b.Text = $"Pound: {lb.calculate()}";
-                WinCnversion.output_5b.Visibility = Visibility.Visible;
-            }
-            else if (Conversion_ask.SelectedValue.ToString() == "uo_info")
-            {
-                var inputUnit = Units_info.SelectedValue;
-                Expression b = new Expression($"({MathExp}*[{inputUnit}])/[B]");
-                WinCnversion.output_1b.Text = $"Byte: {b.calculate()}";
-                WinCnversion.output_1b.Visibility = Visibility.Visible;
-                Expression kb = new Expression($"({MathExp}*[{inputUnit}])/[kB]");
-                WinCnversion.output_2b.Text = $"Kilobyte: {kb.calculate()}";
-                WinCnversion.output_2b.Visibility = Visibility.Visible;
-                Expression mb = new Expression($"({MathExp}*[{inputUnit}])/[MB]");
-                WinCnversion.output_3b.Text = $"Megabyte: {mb.calculate()}";
-                WinCnversion.output_3b.Visibility = Visibility.Visible;
-                Expression gb = new Expression($"({MathExp}*[{inputUnit}])/[GB]");
-                WinCnversion.output_4b.Text = $"Gigabyte: {gb.calculate()}";
-                WinCnversion.output_4b.Visibility = Visibility.Visible;
-                Expression tb = new Expression($"({MathExp}*[{inputUnit}])/[TB]");
-                WinCnversion.output_5b.Text = $"Terabyte: {tb.calculate()}";
-                WinCnversion.output_5b.Visibility = Visibility.Visible;
-            }
-            else if (Conversion_ask.SelectedValue.ToString() == "uo_time")
-            {
-                var inputUnit = Units_time.SelectedValue;
-                Expression sec = new Expression($"({MathExp}*[{inputUnit}])/[s]");
-                WinCnversion.output_1b.Text = $"Second: {sec.calculate()}";
-                WinCnversion.output_1b.Visibility = Visibility.Visible;
-                Expression min = new Expression($"({MathExp}*[{inputUnit}])/[min]");
-                WinCnversion.output_2b.Text = $"Minute: {min.calculate()}";
-                WinCnversion.output_2b.Visibility = Visibility.Visible;
-                Expression mb = new Expression($"({MathExp}*[{inputUnit}])/[h]");
-                WinCnversion.output_3b.Text = $"Hour: {mb.calculate()}";
-                WinCnversion.output_3b.Visibility = Visibility.Visible;
-            }
-            else if (Conversion_ask.SelectedValue.ToString() == "uo_number")
-            {
-                bool success = int.TryParse(MathExp, out int my_regular);
-                if (success)
-                {
-                    WinCnversion.output_1b.Text = $"Integer: {my_regular}";
-                    WinCnversion.output_1b.Visibility = Visibility.Visible;
 
-                    var my_bin = ToBinary(my_regular);
-                    WinCnversion.output_2b.Text = $"Binary: {my_bin}";
-                    WinCnversion.output_2b.Visibility = Visibility.Visible;
-                    var my_oct = Convert.ToString(my_regular, 8);
-                    WinCnversion.output_3b.Text = $"Octal: {my_oct}";
-                    WinCnversion.output_3b.Visibility = Visibility.Visible;
-                    var my_hex = Convert.ToString(my_regular, 16);
-                    WinCnversion.output_4b.Text = $"Hexadecimal: {my_hex}";
-                    WinCnversion.output_4b.Visibility = Visibility.Visible;
-                    ClearAll();
-                }
-                else
-                {
-                    WinCnversion.output_1b.Text = $"Not a integer or other errors";
-                    WinCnversion.output_1b.Visibility = Visibility.Visible;
-                }
+                var detailSelectedStr = "question";
 
+                if (Conversion_ask.SelectedValue.ToString() == "uo_length")
+                {
+                    var inputUnit = Units_length.SelectedValue;
+                    if (inputUnit.ToString() != detailSelectedStr)
+                    {
+                        Expression mm = new Expression($"({MathExp}*[{inputUnit}])/[mm]");
+                        WinCnversion.FeedTxt1($"Millimetre: {mm.calculate()}");
+                        WinCnversion.ShowTxt1();
+                        Expression cm = new Expression($"({MathExp}*[{inputUnit}])/[cm]");
+                        WinCnversion.FeedTxt2($"Centimeter: {cm.calculate()}");
+                        WinCnversion.ShowTxt2();
+                        Expression m = new Expression($"({MathExp}*[{inputUnit}])/[m]");
+                        WinCnversion.FeedTxt3($"Meter: {m.calculate()}");
+                        WinCnversion.ShowTxt3();
+                        Expression km = new Expression($"({MathExp}*[{inputUnit}]) / [km]");
+                        WinCnversion.FeedTxt4($"Kilometer: {km.calculate()}");
+                        WinCnversion.ShowTxt4();
+                        Expression inch = new Expression($"({MathExp}*[{inputUnit}])/[inch]");
+                        WinCnversion.FeedTxt5($"Inch: {inch.calculate()}");
+                        WinCnversion.ShowTxt5();
+                        Expression ft = new Expression($"({MathExp}*[{inputUnit}])/[ft]");
+                        WinCnversion.FeedTxt6($"Foot: {ft.calculate()}");
+                        WinCnversion.ShowTxt6();
+                    }
+                    else
+                    {
+                        DisplayResult("Select a unit");
+                    }
+                }
+                else if (Conversion_ask.SelectedValue.ToString() == "uo_mass")
+                {
+                    var inputUnit = Units_mass.SelectedValue;
+
+                    if (inputUnit.ToString() != detailSelectedStr)
+                    {
+                        Expression mg = new Expression($"({MathExp}*[{inputUnit}])/[mg]");
+                        WinCnversion.output_1b.Text = $"Milligram: {mg.calculate()}";
+                        WinCnversion.output_1b.Visibility = Visibility.Visible;
+                        Expression gr = new Expression($"({MathExp}*[{inputUnit}])/[gr]");
+                        WinCnversion.output_2b.Text = $"Gram: {gr.calculate()}";
+                        WinCnversion.output_2b.Visibility = Visibility.Visible;
+                        Expression kg = new Expression($"({MathExp}*[{inputUnit}])/[kg]");
+                        WinCnversion.output_3b.Text = $"Kilogram: {kg.calculate()}";
+                        WinCnversion.output_3b.Visibility = Visibility.Visible;
+                        Expression oz = new Expression($"({MathExp}*[{inputUnit}])/[oz]");
+                        WinCnversion.output_4b.Text = $"Ounce: {oz.calculate()}";
+                        WinCnversion.output_4b.Visibility = Visibility.Visible;
+                        Expression lb = new Expression($"({MathExp}*[{inputUnit}])/[lb]");
+                        WinCnversion.output_5b.Text = $"Pound: {lb.calculate()}";
+                        WinCnversion.output_5b.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        DisplayResult("Select a unit");
+                    }
+
+                }
+                else if (Conversion_ask.SelectedValue.ToString() == "uo_info")
+                {
+                    var inputUnit = Units_info.SelectedValue;
+
+                    if (inputUnit.ToString() != detailSelectedStr)
+                    {
+                        Expression b = new Expression($"({MathExp}*[{inputUnit}])/[B]");
+                        WinCnversion.output_1b.Text = $"Byte: {b.calculate()}";
+                        WinCnversion.output_1b.Visibility = Visibility.Visible;
+                        Expression kb = new Expression($"({MathExp}*[{inputUnit}])/[kB]");
+                        WinCnversion.output_2b.Text = $"Kilobyte: {kb.calculate()}";
+                        WinCnversion.output_2b.Visibility = Visibility.Visible;
+                        Expression mb = new Expression($"({MathExp}*[{inputUnit}])/[MB]");
+                        WinCnversion.output_3b.Text = $"Megabyte: {mb.calculate()}";
+                        WinCnversion.output_3b.Visibility = Visibility.Visible;
+                        Expression gb = new Expression($"({MathExp}*[{inputUnit}])/[GB]");
+                        WinCnversion.output_4b.Text = $"Gigabyte: {gb.calculate()}";
+                        WinCnversion.output_4b.Visibility = Visibility.Visible;
+                        Expression tb = new Expression($"({MathExp}*[{inputUnit}])/[TB]");
+                        WinCnversion.output_5b.Text = $"Terabyte: {tb.calculate()}";
+                        WinCnversion.output_5b.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        DisplayResult("Select a unit");
+                    }
+
+                }
+                else if (Conversion_ask.SelectedValue.ToString() == "uo_time")
+                {
+                    var inputUnit = Units_time.SelectedValue;
+                    if (inputUnit.ToString() != detailSelectedStr)
+                    {
+                        Expression sec = new Expression($"({MathExp}*[{inputUnit}])/[s]");
+                        WinCnversion.output_1b.Text = $"Second: {sec.calculate()}";
+                        WinCnversion.output_1b.Visibility = Visibility.Visible;
+                        Expression min = new Expression($"({MathExp}*[{inputUnit}])/[min]");
+                        WinCnversion.output_2b.Text = $"Minute: {min.calculate()}";
+                        WinCnversion.output_2b.Visibility = Visibility.Visible;
+                        Expression mb = new Expression($"({MathExp}*[{inputUnit}])/[h]");
+                        WinCnversion.output_3b.Text = $"Hour: {mb.calculate()}";
+                        WinCnversion.output_3b.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        DisplayResult("Select a unit");
+                    }
+
+                }
+                else if (Conversion_ask.SelectedValue.ToString() == "uo_number")
+                {
+                    bool success = int.TryParse(MathExp, out int my_regular);
+                    if (success)
+                    {
+                        WinCnversion.output_1b.Text = $"Integer: {my_regular}";
+                        WinCnversion.output_1b.Visibility = Visibility.Visible;
+
+                        var my_bin = ToBinary(my_regular);
+                        WinCnversion.output_2b.Text = $"Binary: {my_bin}";
+                        WinCnversion.output_2b.Visibility = Visibility.Visible;
+                        var my_oct = Convert.ToString(my_regular, 8);
+                        WinCnversion.output_3b.Text = $"Octal: {my_oct}";
+                        WinCnversion.output_3b.Visibility = Visibility.Visible;
+                        var my_hex = Convert.ToString(my_regular, 16);
+                        WinCnversion.output_4b.Text = $"Hexadecimal: {my_hex}";
+                        WinCnversion.output_4b.Visibility = Visibility.Visible;
+                        ClearAll();
+                    }
+                    else
+                    {
+                        WinCnversion.output_1b.Text = $"Not a integer or other errors";
+                        WinCnversion.output_1b.Visibility = Visibility.Visible;
+                    }
+                }
+            }
+            else
+            {
+                var warningMsg = "An input number required";
+                DisplayResult(warningMsg);
             }
 
 
@@ -281,7 +324,7 @@ namespace wpfCalculator
             int bits = 0;
             int bitblock = 4;
 
-            for (int i = 0; i < binVal.Length; i = i + bitblock)
+            for (int i = 0; i < binVal.Length; i += bitblock)
             { bits += bitblock; }
 
             return binVal.PadLeft(bits, '0');
@@ -290,8 +333,6 @@ namespace wpfCalculator
 
         private void Conversion_ask_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
-
             if (Conversion_ask.SelectedValue != null)
             {
                 switch (Conversion_ask.SelectedValue.ToString())
@@ -333,6 +374,7 @@ namespace wpfCalculator
                         break;
                     case "which":
                         HideComboBoxes();
+                        WinCnversion.Close();
                         break;
                 }
             }
