@@ -28,12 +28,14 @@ namespace wpfCalculator
         {
             InitializeComponent();
             InputString = new StringBuilder();
+            WinCnversion = new ConversionWindow();
             HideComboBoxes();
         }
 
         private void ShowWin2()
         {
-            WinCnversion = new ConversionWindow();
+            WinCnversion.ClearTextBoxes();
+            WinCnversion.HideTextBoxes();
             WinCnversion.Show();
         }
 
@@ -389,25 +391,3 @@ namespace wpfCalculator
         }
     }
 }
-
-//if (true)
-//{
-//    switch ()
-//    {
-//        case "int":
-
-//            break;
-//        case "uo_length":
-
-//            break;
-//        case "uo_mass":
-
-//            break;
-//        case "uo_number":
-
-//            break;
-//        case "uo_time":
-
-//            break;
-
-//    }

@@ -15,6 +15,7 @@
         </LinearGradientBrush>-->
         <!--<SolidColorBrush x:Key="ComboBox.Static.Foreground" Color="White"/>
         <SolidColorBrush x:Key="ComboBox.Static.BorderBush" Color="White"/>-->
+        
         <SolidColorBrush x:Key="ComboBox.Static.Background" Color="Black"/>
         <SolidColorBrush x:Key="ComboBox.Static.Border" Color="#FFACACAC"/>
         <SolidColorBrush x:Key="ComboBox.Static.Editable.Background" Color="#FFFFFFFF"/>
@@ -620,15 +621,6 @@
             </Button.Background>
         </Button>
         <ComboBox  x:Name="Conversion_ask" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="319,116,0,0" VerticalAlignment="Top" Width="197" Height="30" FontSize="18" SelectionChanged="Conversion_ask_SelectionChanged" BorderBrush="White" Foreground="White" Style="{DynamicResource ComboBoxStyle1}">
-            <!--<ComboBox.ItemContainerStyle>
-                <Style TargetType="{x:Type ComboBoxItem}">
-                    <Setter Property="Background" Value="Black"/>
-                    <Setter Property="BorderBrush" Value="Black"/>
-                </Style>
-            </ComboBox.ItemContainerStyle>-->
-            <!--<ComboBox.Background>
-                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowTextColorKey}}"/>
-            </ComboBox.Background>-->
             <ComboBoxItem IsSelected="True" Tag="which" Content="Which to convert"/>
             <ComboBoxItem Tag="uo_number" Content="Units of num literal"/>
             <ComboBoxItem Tag="uo_length" Content="Units of length"/>
@@ -637,19 +629,6 @@
             <ComboBoxItem Tag="uo_time" Content="Units of time"/>
         </ComboBox>
         <ComboBox x:Name="Units_length" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="321,163,0,0" VerticalAlignment="Top" Width="197" Height="30" FontSize="18" BorderBrush="White" Foreground="White" Style="{DynamicResource ComboBoxStyle1}">
-            <!--<ComboBox.Background>
-                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                    <GradientStop Color="#FFF0F0F0" Offset="0"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </ComboBox.Background>-->
-            <!--<ComboBox.ItemContainerStyle>
-                <Style TargetType="{x:Type ComboBoxItem}">
-                    <Setter Property="Background" Value="Black"/>
-                    <Setter Property="BorderBrush" Value="Black"/>
-                </Style>
-            </ComboBox.ItemContainerStyle>-->
-
             <ComboBoxItem IsSelected="True" Tag="question" Content="Which length"/>
             <ComboBoxItem Tag="mm" Content="millimetres"/>
             <ComboBoxItem Tag="cm" Content="centimeters"/>
@@ -662,18 +641,6 @@
         </ComboBox>
 
         <ComboBox x:Name="Units_mass" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="321,163,0,0" VerticalAlignment="Top" Width="197" Height="30" FontSize="18" BorderBrush="White" Foreground="White" Style="{DynamicResource ComboBoxStyle1}">
-            <!--<ComboBox.Background>
-                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                    <GradientStop Color="#FFF0F0F0" Offset="0"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </ComboBox.Background>-->
-            <!--<ComboBox.ItemContainerStyle>
-                <Style TargetType="{x:Type ComboBoxItem}">
-                    <Setter Property="Background" Value="Black"/>
-                    <Setter Property="BorderBrush" Value="Black"/>
-                </Style>
-            </ComboBox.ItemContainerStyle>-->
             <ComboBoxItem IsSelected="True" Tag="question" Content="Which mass"/>
             <ComboBoxItem Tag="mg" Content="milligrams"/>
             <ComboBoxItem Tag="gr" Content="grams"/>
@@ -682,12 +649,6 @@
             <ComboBoxItem Tag="lb" Content="pounds"/>
         </ComboBox>
         <ComboBox x:Name="Units_info" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="321,163,0,0" VerticalAlignment="Top" Width="197" Height="30" FontSize="18" BorderBrush="White" Foreground="White" Style="{DynamicResource ComboBoxStyle1}">
-            <!--<ComboBox.Background>
-                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                    <GradientStop Color="#FFF0F0F0" Offset="0"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </ComboBox.Background>-->
             <ComboBoxItem IsSelected="True" Tag="question" Content="Which infomation"/>
             <ComboBoxItem Tag="B" Content="bytes"/>
             <ComboBoxItem Tag="kB" Content="kilobytes"/>
@@ -696,12 +657,6 @@
             <ComboBoxItem Tag="TB" Content="terabytes"/>
         </ComboBox>
         <ComboBox x:Name="Units_time" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="321,163,0,0" VerticalAlignment="Top" Width="197" Height="30" FontSize="18" BorderBrush="White" Foreground="White" Style="{DynamicResource ComboBoxStyle1}">
-            <!--<ComboBox.Background>
-                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                    <GradientStop Color="#FFF0F0F0" Offset="0"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </ComboBox.Background>-->
             <ComboBoxItem IsSelected="True" Tag="question" Content="Which time"/>
             <ComboBoxItem Tag="s" Content="seconds"/>
             <ComboBoxItem Tag="min" Content="minutes"/>

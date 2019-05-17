@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,22 @@ namespace wpfCalculator
         {
             InitializeComponent();
             HideTextBoxes();
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
+        }
+
+        public void ClearTextBoxes()
+        {
+            output_1b.Text = null;
+            output_2b.Text = null;
+            output_3b.Text = null;
+            output_4b.Text = null;
+            output_5b.Text = null;
+            output_6b.Text = null;
         }
 
         public void HideTextBoxes()
