@@ -15,7 +15,7 @@
         </LinearGradientBrush>-->
         <!--<SolidColorBrush x:Key="ComboBox.Static.Foreground" Color="White"/>
         <SolidColorBrush x:Key="ComboBox.Static.BorderBush" Color="White"/>-->
-        
+
         <SolidColorBrush x:Key="ComboBox.Static.Background" Color="Black"/>
         <SolidColorBrush x:Key="ComboBox.Static.Border" Color="#FFACACAC"/>
         <SolidColorBrush x:Key="ComboBox.Static.Editable.Background" Color="#FFFFFFFF"/>
@@ -510,7 +510,7 @@
             </Button.Background>
         </Button>
 
-        <Button Content="Sq Root" HorizontalAlignment="Left" Margin="115,79,0,0" VerticalAlignment="Top" Width="96" Height="31" RenderTransformOrigin="-1.022,-0.614" Click="Sqrt_Click">
+        <Button Content="Sq Root" HorizontalAlignment="Left" Margin="115,79,0,0" VerticalAlignment="Top" Width="46" Height="31" RenderTransformOrigin="-1.022,-0.614" Click="Sqrt_Click">
             <Button.Foreground>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
             </Button.Foreground>
@@ -576,7 +576,7 @@
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowTextColorKey}}"/>
             </Button.Background>
         </Button>
-        <Button Content="°C→°F" HorizontalAlignment="Left" Margin="319,79,0,0" VerticalAlignment="Top" Width="97" Height="31" FontSize="18" BorderThickness="2" Click="CtoF_click" RenderTransformOrigin="1.137,0.504">
+        <Button Content="°C→°F" HorizontalAlignment="Left" Margin="166,79,0,0" VerticalAlignment="Top" Width="71" Height="31" FontSize="18" BorderThickness="2" Click="CtoF_click" RenderTransformOrigin="1.137,0.504">
             <Button.Foreground>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
             </Button.Foreground>
@@ -587,7 +587,7 @@
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowTextColorKey}}"/>
             </Button.Background>
         </Button>
-        <Button Content="°F→°C" HorizontalAlignment="Left" Margin="421,79,0,0" VerticalAlignment="Top" Width="97" Height="31" FontSize="18" BorderThickness="2" Click="FtoC_click" RenderTransformOrigin="1.137,0.504">
+        <Button Content="°F→°C" HorizontalAlignment="Left" Margin="237,79,0,0" VerticalAlignment="Top" Width="75" Height="31" FontSize="18" BorderThickness="2" Click="FtoC_click" RenderTransformOrigin="1.137,0.504">
             <Button.Foreground>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
             </Button.Foreground>
@@ -609,7 +609,7 @@
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowTextColorKey}}"/>
             </Button.Background>
         </Button>
-        <Button Content="Convert" HorizontalAlignment="Left" Margin="215,79,0,0" VerticalAlignment="Top" Width="97" Height="31" FontSize="18" BorderThickness="2" Click="Conversion_click" RenderTransformOrigin="1.137,0.504">
+        <Button Content="Convert" HorizontalAlignment="Left" Margin="321,80,0,0" VerticalAlignment="Top" Width="197" Height="31" FontSize="18" BorderThickness="2" Click="Conversion_click" RenderTransformOrigin="1.137,0.504">
             <Button.Foreground>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
             </Button.Foreground>
@@ -620,15 +620,16 @@
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowTextColorKey}}"/>
             </Button.Background>
         </Button>
-        <ComboBox  x:Name="Conversion_ask" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="319,116,0,0" VerticalAlignment="Top" Width="197" Height="30" FontSize="18" SelectionChanged="Conversion_ask_SelectionChanged" BorderBrush="White" Foreground="White" Style="{DynamicResource ComboBoxStyle1}">
+        <ComboBox  x:Name="Conversion_ask" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="321,127,0,0" VerticalAlignment="Top" Width="197" Height="30" FontSize="18" SelectionChanged="Conversion_ask_SelectionChanged" BorderBrush="White" Foreground="White" Style="{DynamicResource ComboBoxStyle1}" RenderTransformOrigin="0.507,0.836">
             <ComboBoxItem IsSelected="True" Tag="which" Content="Which to convert"/>
             <ComboBoxItem Tag="uo_number" Content="Units of num literal"/>
             <ComboBoxItem Tag="uo_length" Content="Units of length"/>
             <ComboBoxItem Tag="uo_mass" Content="Units of mass"/>
             <ComboBoxItem Tag="uo_info" Content="Units of information"/>
             <ComboBoxItem Tag="uo_time" Content="Units of time"/>
+            <ComboBoxItem Tag="uo_percent" Content="Percent ↔ Decimal"/>
         </ComboBox>
-        <ComboBox x:Name="Units_length" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="321,163,0,0" VerticalAlignment="Top" Width="197" Height="30" FontSize="18" BorderBrush="White" Foreground="White" Style="{DynamicResource ComboBoxStyle1}">
+        <ComboBox x:Name="Units_length" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="321,173,0,0" VerticalAlignment="Top" Width="197" Height="30" FontSize="18" BorderBrush="White" Foreground="White" Style="{DynamicResource ComboBoxStyle1}">
             <ComboBoxItem IsSelected="True" Tag="question" Content="Which length"/>
             <ComboBoxItem Tag="mm" Content="millimetres"/>
             <ComboBoxItem Tag="cm" Content="centimeters"/>
@@ -640,7 +641,7 @@
 
         </ComboBox>
 
-        <ComboBox x:Name="Units_mass" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="321,163,0,0" VerticalAlignment="Top" Width="197" Height="30" FontSize="18" BorderBrush="White" Foreground="White" Style="{DynamicResource ComboBoxStyle1}">
+        <ComboBox x:Name="Units_mass" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="321,173,0,0" VerticalAlignment="Top" Width="197" Height="30" FontSize="18" BorderBrush="White" Foreground="White" Style="{DynamicResource ComboBoxStyle1}">
             <ComboBoxItem IsSelected="True" Tag="question" Content="Which mass"/>
             <ComboBoxItem Tag="mg" Content="milligrams"/>
             <ComboBoxItem Tag="gr" Content="grams"/>
@@ -648,7 +649,7 @@
             <ComboBoxItem Tag="oz" Content="ounces"/>
             <ComboBoxItem Tag="lb" Content="pounds"/>
         </ComboBox>
-        <ComboBox x:Name="Units_info" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="321,163,0,0" VerticalAlignment="Top" Width="197" Height="30" FontSize="18" BorderBrush="White" Foreground="White" Style="{DynamicResource ComboBoxStyle1}">
+        <ComboBox x:Name="Units_info" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="321,173,0,0" VerticalAlignment="Top" Width="197" Height="30" FontSize="18" BorderBrush="White" Foreground="White" Style="{DynamicResource ComboBoxStyle1}">
             <ComboBoxItem IsSelected="True" Tag="question" Content="Which infomation"/>
             <ComboBoxItem Tag="B" Content="bytes"/>
             <ComboBoxItem Tag="kB" Content="kilobytes"/>
@@ -656,11 +657,16 @@
             <ComboBoxItem Tag="GB" Content="gigabytes"/>
             <ComboBoxItem Tag="TB" Content="terabytes"/>
         </ComboBox>
-        <ComboBox x:Name="Units_time" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="321,163,0,0" VerticalAlignment="Top" Width="197" Height="30" FontSize="18" BorderBrush="White" Foreground="White" Style="{DynamicResource ComboBoxStyle1}">
+        <ComboBox x:Name="Units_time" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="321,173,0,0" VerticalAlignment="Top" Width="197" Height="30" FontSize="18" BorderBrush="White" Foreground="White" Style="{DynamicResource ComboBoxStyle1}">
             <ComboBoxItem IsSelected="True" Tag="question" Content="Which time"/>
             <ComboBoxItem Tag="s" Content="seconds"/>
             <ComboBoxItem Tag="min" Content="minutes"/>
             <ComboBoxItem Tag="h" Content="hours"/>
+        </ComboBox>
+        <ComboBox x:Name="Units_percent" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="321,173,0,0" VerticalAlignment="Top" Width="197" Height="30" FontSize="18" BorderBrush="White" Foreground="White" Style="{DynamicResource ComboBoxStyle1}">
+            <ComboBoxItem IsSelected="True" Tag="question" Content="Which way"/>
+            <ComboBoxItem Tag="big" Content="Decimal"/>
+            <ComboBoxItem Tag="small" Content="Percent"/>
         </ComboBox>
     </Grid>
 </Window>  

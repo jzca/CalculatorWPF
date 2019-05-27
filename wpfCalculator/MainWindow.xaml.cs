@@ -45,6 +45,7 @@ namespace wpfCalculator
             Units_length.Visibility = Visibility.Hidden;
             Units_mass.Visibility = Visibility.Hidden;
             Units_time.Visibility = Visibility.Hidden;
+            Units_percent.Visibility = Visibility.Hidden;
         }
 
         private bool InsultUsers()
@@ -155,6 +156,7 @@ namespace wpfCalculator
                     = new Expression($"({MathExp} * 9/5) + 32");
                 var ans = cToF.calculate().ToString();
                 DisplayResult(ans);
+                ClearAll();
             }
         }
 
@@ -166,6 +168,7 @@ namespace wpfCalculator
                     = new Expression($"({MathExp} - 32) * 5/9");
                 var ans = fTOc.calculate().ToString();
                 DisplayResult(ans);
+                ClearAll();
             }
         }
 
@@ -282,6 +285,25 @@ namespace wpfCalculator
                     }
 
                 }
+                else if (Conversion_ask.SelectedValue.ToString() == "uo_percent")
+                {
+                    var inputUnit = Units_percent.SelectedValue;
+                    if (inputUnit.ToString() != detailSelectedStr)
+                    {
+                        Expression toBig = new Expression($"({MathExp})*100");
+                        WinCnversion.output_1b.Text = $"Percent: {toBig.calculate()}%";
+                        WinCnversion.output_1b.Visibility = Visibility.Visible;
+                        //var mathExp2 = $"{MathExp.ToString()}%";
+                        Expression toSm = new Expression($"({MathExp})/100");
+                        WinCnversion.output_2b.Text = $"Decimal: {toSm.calculate()}";
+                        WinCnversion.output_2b.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        DisplayResult("Select a way");
+                    }
+
+                }
                 else if (Conversion_ask.SelectedValue.ToString() == "uo_number")
                 {
                     bool success = int.TryParse(MathExp, out int my_regular);
@@ -344,6 +366,7 @@ namespace wpfCalculator
                         Units_length.Visibility = Visibility.Hidden;
                         Units_mass.Visibility = Visibility.Hidden;
                         Units_time.Visibility = Visibility.Hidden;
+                        Units_percent.Visibility = Visibility.Hidden;
                         ShowWin2();
                         break;
                     case "uo_length":
@@ -351,6 +374,7 @@ namespace wpfCalculator
                         Units_info.Visibility = Visibility.Hidden;
                         Units_mass.Visibility = Visibility.Hidden;
                         Units_time.Visibility = Visibility.Hidden;
+                        Units_percent.Visibility = Visibility.Hidden;
                         ShowWin2();
                         break;
                     case "uo_mass":
@@ -358,6 +382,7 @@ namespace wpfCalculator
                         Units_info.Visibility = Visibility.Hidden;
                         Units_length.Visibility = Visibility.Hidden;
                         Units_time.Visibility = Visibility.Hidden;
+                        Units_percent.Visibility = Visibility.Hidden;
                         ShowWin2();
                         break;
                     case "uo_number":
@@ -365,10 +390,20 @@ namespace wpfCalculator
                         Units_length.Visibility = Visibility.Hidden;
                         Units_mass.Visibility = Visibility.Hidden;
                         Units_time.Visibility = Visibility.Hidden;
+                        Units_percent.Visibility = Visibility.Hidden;
                         ShowWin2();
                         break;
                     case "uo_time":
                         Units_time.Visibility = Visibility.Visible;
+                        Units_info.Visibility = Visibility.Hidden;
+                        Units_length.Visibility = Visibility.Hidden;
+                        Units_mass.Visibility = Visibility.Hidden;
+                        Units_percent.Visibility = Visibility.Hidden;
+                        ShowWin2();
+                        break;
+                    case "uo_percent":
+                        Units_percent.Visibility = Visibility.Visible;
+                        Units_time.Visibility = Visibility.Hidden;
                         Units_info.Visibility = Visibility.Hidden;
                         Units_length.Visibility = Visibility.Hidden;
                         Units_mass.Visibility = Visibility.Hidden;
