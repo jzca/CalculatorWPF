@@ -663,10 +663,5 @@
             <ComboBoxItem Tag="min" Content="minutes"/>
             <ComboBoxItem Tag="h" Content="hours"/>
         </ComboBox>
-        <ComboBox x:Name="Units_percent" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="321,173,0,0" VerticalAlignment="Top" Width="197" Height="30" FontSize="18" BorderBrush="White" Foreground="White" Style="{DynamicResource ComboBoxStyle1}">
-            <ComboBoxItem IsSelected="True" Tag="question" Content="Which way"/>
-            <ComboBoxItem Tag="big" Content="Decimal"/>
-            <ComboBoxItem Tag="small" Content="Percent"/>
-        </ComboBox>
     </Grid>
 </Window>  

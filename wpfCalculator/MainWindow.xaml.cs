@@ -45,7 +45,6 @@ namespace wpfCalculator
             Units_length.Visibility = Visibility.Hidden;
             Units_mass.Visibility = Visibility.Hidden;
             Units_time.Visibility = Visibility.Hidden;
-            Units_percent.Visibility = Visibility.Hidden;
         }
 
         private bool InsultUsers()
@@ -109,7 +108,7 @@ namespace wpfCalculator
             if (MathExp.Any())
             {
                 Expression sqrtMath
-                    = new Expression($"sqrt({MathExp})");
+                    = new Expression($"sqrt(({MathExp}))");
                 var ans = sqrtMath.calculate().ToString();
                 DisplayResult(ans);
                 ClearAll();
@@ -153,7 +152,7 @@ namespace wpfCalculator
             {
 
                 Expression cToF
-                    = new Expression($"({MathExp} * 9/5) + 32");
+                    = new Expression($"(({MathExp}) * 9/5) + 32");
                 var ans = cToF.calculate().ToString();
                 DisplayResult(ans);
                 ClearAll();
@@ -165,7 +164,7 @@ namespace wpfCalculator
             if (MathExp.Any())
             {
                 Expression fTOc
-                    = new Expression($"({MathExp} - 32) * 5/9");
+                    = new Expression($"(({MathExp}) - 32) * 5/9");
                 var ans = fTOc.calculate().ToString();
                 DisplayResult(ans);
                 ClearAll();
@@ -184,22 +183,22 @@ namespace wpfCalculator
                     var inputUnit = Units_length.SelectedValue;
                     if (inputUnit.ToString() != detailSelectedStr)
                     {
-                        Expression mm = new Expression($"({MathExp}*[{inputUnit}])/[mm]");
+                        Expression mm = new Expression($"(({MathExp})*[{inputUnit}])/[mm]");
                         WinCnversion.FeedTxt1($"Millimetre: {mm.calculate()}");
                         WinCnversion.ShowTxt1();
-                        Expression cm = new Expression($"({MathExp}*[{inputUnit}])/[cm]");
+                        Expression cm = new Expression($"(({MathExp})*[{inputUnit}])/[cm]");
                         WinCnversion.FeedTxt2($"Centimeter: {cm.calculate()}");
                         WinCnversion.ShowTxt2();
-                        Expression m = new Expression($"({MathExp}*[{inputUnit}])/[m]");
+                        Expression m = new Expression($"(({MathExp})*[{inputUnit}])/[m]");
                         WinCnversion.FeedTxt3($"Meter: {m.calculate()}");
                         WinCnversion.ShowTxt3();
-                        Expression km = new Expression($"({MathExp}*[{inputUnit}]) / [km]");
+                        Expression km = new Expression($"(({MathExp})*[{inputUnit}]) / [km]");
                         WinCnversion.FeedTxt4($"Kilometer: {km.calculate()}");
                         WinCnversion.ShowTxt4();
-                        Expression inch = new Expression($"({MathExp}*[{inputUnit}])/[inch]");
+                        Expression inch = new Expression($"(({MathExp})*[{inputUnit}])/[inch]");
                         WinCnversion.FeedTxt5($"Inch: {inch.calculate()}");
                         WinCnversion.ShowTxt5();
-                        Expression ft = new Expression($"({MathExp}*[{inputUnit}])/[ft]");
+                        Expression ft = new Expression($"(({MathExp})*[{inputUnit}])/[ft]");
                         WinCnversion.FeedTxt6($"Foot: {ft.calculate()}");
                         WinCnversion.ShowTxt6();
                     }
@@ -214,19 +213,19 @@ namespace wpfCalculator
 
                     if (inputUnit.ToString() != detailSelectedStr)
                     {
-                        Expression mg = new Expression($"({MathExp}*[{inputUnit}])/[mg]");
+                        Expression mg = new Expression($"(({MathExp})*[{inputUnit}])/[mg]");
                         WinCnversion.output_1b.Text = $"Milligram: {mg.calculate()}";
                         WinCnversion.output_1b.Visibility = Visibility.Visible;
-                        Expression gr = new Expression($"({MathExp}*[{inputUnit}])/[gr]");
+                        Expression gr = new Expression($"(({MathExp})*[{inputUnit}])/[gr]");
                         WinCnversion.output_2b.Text = $"Gram: {gr.calculate()}";
                         WinCnversion.output_2b.Visibility = Visibility.Visible;
-                        Expression kg = new Expression($"({MathExp}*[{inputUnit}])/[kg]");
+                        Expression kg = new Expression($"(({MathExp})*[{inputUnit}])/[kg]");
                         WinCnversion.output_3b.Text = $"Kilogram: {kg.calculate()}";
                         WinCnversion.output_3b.Visibility = Visibility.Visible;
-                        Expression oz = new Expression($"({MathExp}*[{inputUnit}])/[oz]");
+                        Expression oz = new Expression($"(({MathExp})*[{inputUnit}])/[oz]");
                         WinCnversion.output_4b.Text = $"Ounce: {oz.calculate()}";
                         WinCnversion.output_4b.Visibility = Visibility.Visible;
-                        Expression lb = new Expression($"({MathExp}*[{inputUnit}])/[lb]");
+                        Expression lb = new Expression($"(({MathExp})*[{inputUnit}])/[lb]");
                         WinCnversion.output_5b.Text = $"Pound: {lb.calculate()}";
                         WinCnversion.output_5b.Visibility = Visibility.Visible;
                     }
@@ -242,19 +241,19 @@ namespace wpfCalculator
 
                     if (inputUnit.ToString() != detailSelectedStr)
                     {
-                        Expression b = new Expression($"({MathExp}*[{inputUnit}])/[B]");
+                        Expression b = new Expression($"(({MathExp})*[{inputUnit}])/[B]");
                         WinCnversion.output_1b.Text = $"Byte: {b.calculate()}";
                         WinCnversion.output_1b.Visibility = Visibility.Visible;
-                        Expression kb = new Expression($"({MathExp}*[{inputUnit}])/[kB]");
+                        Expression kb = new Expression($"(({MathExp})*[{inputUnit}])/[kB]");
                         WinCnversion.output_2b.Text = $"Kilobyte: {kb.calculate()}";
                         WinCnversion.output_2b.Visibility = Visibility.Visible;
-                        Expression mb = new Expression($"({MathExp}*[{inputUnit}])/[MB]");
+                        Expression mb = new Expression($"(({MathExp})*[{inputUnit}])/[MB]");
                         WinCnversion.output_3b.Text = $"Megabyte: {mb.calculate()}";
                         WinCnversion.output_3b.Visibility = Visibility.Visible;
-                        Expression gb = new Expression($"({MathExp}*[{inputUnit}])/[GB]");
+                        Expression gb = new Expression($"(({MathExp})*[{inputUnit}])/[GB]");
                         WinCnversion.output_4b.Text = $"Gigabyte: {gb.calculate()}";
                         WinCnversion.output_4b.Visibility = Visibility.Visible;
-                        Expression tb = new Expression($"({MathExp}*[{inputUnit}])/[TB]");
+                        Expression tb = new Expression($"(({MathExp})*[{inputUnit}])/[TB]");
                         WinCnversion.output_5b.Text = $"Terabyte: {tb.calculate()}";
                         WinCnversion.output_5b.Visibility = Visibility.Visible;
                     }
@@ -269,13 +268,13 @@ namespace wpfCalculator
                     var inputUnit = Units_time.SelectedValue;
                     if (inputUnit.ToString() != detailSelectedStr)
                     {
-                        Expression sec = new Expression($"({MathExp}*[{inputUnit}])/[s]");
+                        Expression sec = new Expression($"(({MathExp})*[{inputUnit}])/[s]");
                         WinCnversion.output_1b.Text = $"Second: {sec.calculate()}";
                         WinCnversion.output_1b.Visibility = Visibility.Visible;
-                        Expression min = new Expression($"({MathExp}*[{inputUnit}])/[min]");
+                        Expression min = new Expression($"(({MathExp})*[{inputUnit}])/[min]");
                         WinCnversion.output_2b.Text = $"Minute: {min.calculate()}";
                         WinCnversion.output_2b.Visibility = Visibility.Visible;
-                        Expression mb = new Expression($"({MathExp}*[{inputUnit}])/[h]");
+                        Expression mb = new Expression($"(({MathExp})*[{inputUnit}])/[h]");
                         WinCnversion.output_3b.Text = $"Hour: {mb.calculate()}";
                         WinCnversion.output_3b.Visibility = Visibility.Visible;
                     }
@@ -287,21 +286,13 @@ namespace wpfCalculator
                 }
                 else if (Conversion_ask.SelectedValue.ToString() == "uo_percent")
                 {
-                    var inputUnit = Units_percent.SelectedValue;
-                    if (inputUnit.ToString() != detailSelectedStr)
-                    {
-                        Expression toBig = new Expression($"({MathExp})*100");
-                        WinCnversion.output_1b.Text = $"Percent: {toBig.calculate()}%";
-                        WinCnversion.output_1b.Visibility = Visibility.Visible;
-                        //var mathExp2 = $"{MathExp.ToString()}%";
-                        Expression toSm = new Expression($"({MathExp})/100");
-                        WinCnversion.output_2b.Text = $"Decimal: {toSm.calculate()}";
-                        WinCnversion.output_2b.Visibility = Visibility.Visible;
-                    }
-                    else
-                    {
-                        DisplayResult("Select a way");
-                    }
+                    Expression toBig = new Expression($"({MathExp})*100");
+                    WinCnversion.output_1b.Text = $"Percent (←Decimal) : {toBig.calculate()}%";
+                    WinCnversion.output_1b.Visibility = Visibility.Visible;
+                    Expression toSm = new Expression($"({MathExp})/100");
+                    WinCnversion.output_2b.Text = $"Decimal (←Percent) : {toSm.calculate()}";
+                    WinCnversion.output_2b.Visibility = Visibility.Visible;
+                    ClearAll();
 
                 }
                 else if (Conversion_ask.SelectedValue.ToString() == "uo_number")
@@ -366,7 +357,6 @@ namespace wpfCalculator
                         Units_length.Visibility = Visibility.Hidden;
                         Units_mass.Visibility = Visibility.Hidden;
                         Units_time.Visibility = Visibility.Hidden;
-                        Units_percent.Visibility = Visibility.Hidden;
                         ShowWin2();
                         break;
                     case "uo_length":
@@ -374,7 +364,6 @@ namespace wpfCalculator
                         Units_info.Visibility = Visibility.Hidden;
                         Units_mass.Visibility = Visibility.Hidden;
                         Units_time.Visibility = Visibility.Hidden;
-                        Units_percent.Visibility = Visibility.Hidden;
                         ShowWin2();
                         break;
                     case "uo_mass":
@@ -382,7 +371,6 @@ namespace wpfCalculator
                         Units_info.Visibility = Visibility.Hidden;
                         Units_length.Visibility = Visibility.Hidden;
                         Units_time.Visibility = Visibility.Hidden;
-                        Units_percent.Visibility = Visibility.Hidden;
                         ShowWin2();
                         break;
                     case "uo_number":
@@ -390,7 +378,6 @@ namespace wpfCalculator
                         Units_length.Visibility = Visibility.Hidden;
                         Units_mass.Visibility = Visibility.Hidden;
                         Units_time.Visibility = Visibility.Hidden;
-                        Units_percent.Visibility = Visibility.Hidden;
                         ShowWin2();
                         break;
                     case "uo_time":
@@ -398,11 +385,9 @@ namespace wpfCalculator
                         Units_info.Visibility = Visibility.Hidden;
                         Units_length.Visibility = Visibility.Hidden;
                         Units_mass.Visibility = Visibility.Hidden;
-                        Units_percent.Visibility = Visibility.Hidden;
                         ShowWin2();
                         break;
                     case "uo_percent":
-                        Units_percent.Visibility = Visibility.Visible;
                         Units_time.Visibility = Visibility.Hidden;
                         Units_info.Visibility = Visibility.Hidden;
                         Units_length.Visibility = Visibility.Hidden;
