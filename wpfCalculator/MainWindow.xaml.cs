@@ -286,11 +286,14 @@ namespace wpfCalculator
                 }
                 else if (Conversion_ask.SelectedValue.ToString() == "uo_percent")
                 {
-                    Expression toBig = new Expression($"({MathExp})*100");
-                    WinCnversion.output_1b.Text = $"Percent (←Decimal) : {toBig.calculate()}%";
+                    Expression regularMath= new Expression(MathExp);
+                    var single = regularMath.calculate();
+
+                    Expression toBig = new Expression($"{single}*100");
+                    WinCnversion.output_1b.Text = $"{single} is {toBig.calculate()}%";
                     WinCnversion.output_1b.Visibility = Visibility.Visible;
-                    Expression toSm = new Expression($"({MathExp})/100");
-                    WinCnversion.output_2b.Text = $"Decimal (←Percent) : {toSm.calculate()}";
+                    Expression toSm = new Expression($"{single}/100");
+                    WinCnversion.output_2b.Text = $"{single}% is {toSm.calculate()}";
                     WinCnversion.output_2b.Visibility = Visibility.Visible;
                     ClearAll();
 
